@@ -1,0 +1,46 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(167, 61, 61);
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 23px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: rgba(0, 39, 124, 0.616);
+}
+
+#pt{
+    width: 70px;
+    height: 70px;
+    display: block;
+    padding: 14px 15px;
+
+
+}
+
+
+.imp{
+padding: 15px 25px;
+display: block;
+
+}
+#imgamong{
+    width: 650px;
+    height: 400;
+    float: left;
+}
+

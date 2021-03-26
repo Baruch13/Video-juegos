@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheep</title>
+</head>
+<body>
+
+
+
+
+
+    
+    <ul>
+        <li><img id="pt" src="oveja.png" alt=""></li>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#" onclick="alert('En construccion');"">Noticias</a></li>
+        <li><a href="#" onclick="alert('En construccion');">Mas Vendidos</a></li>
+        <li><a href="#" onclick="alert('En construccion');">Opiniones</a></li>
+      </ul>
+     
+   
+
+
+      <style type="text/css" media="screen">
+        .carousel {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+        }
+        #imagen {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            // Variables
+            const IMAGENES = [
+                'img/amongus.jpg',
+                'img/gtasa.jpg',
+                'img/lol.jpg'
+            ];
+            const TIEMPO_INTERVALO_MILESIMAS_SEG = 1000;
+            let posicionActual = 0;
+            let $botonRetroceder = document.querySelector('#retroceder');
+            let $botonAvanzar = document.querySelector('#avanzar');
+            let $imagen = document.querySelector('#imagen');
+            let intervalo;
+
+            // Funciones
+
+            /**
+             * Funcion que cambia la foto en la siguiente posicion
+             */
+            function pasarFoto() {
+                if(posicionActual >= IMAGENES.length - 1) {
+                    posicionActual = 0;
+                } else {
+                    posicionActual++;
+                }
+                renderizarImagen();
+            }
+
+            /**
+             * Funcion que cambia la foto en la anterior posicion
+             */
+            function retrocederFoto() {
+                if(posicionActual <= 0) {
+                    posicionActual = IMAGENES.length - 1;
+                } else {
+                    posicionActual--;
+                }
+                renderizarImagen();
+            }
+
+            /**
+             * Funcion que actualiza la imagen de imagen dependiendo de posicionActual
+             */
+            function renderizarImagen () {
+                $imagen.style.backgroundImage = `url(${IMAGENES[posicionActual]})`;
+            }
+
+            /**
+             * Activa el autoplay de la imagen
+             */
+            function playIntervalo() {
+                intervalo = setInterval(pasarFoto, TIEMPO_INTERVALO_MILESIMAS_SEG);
+                // Desactivamos los botones de control
+                $botonAvanzar.setAttribute('disabled', true);
+                $botonRetroceder.setAttribute('disabled', true);
+                $botonPlay.setAttribute('disabled', true);
+                $botonStop.removeAttribute('disabled');
+
+            }
+
+            /**
+             * Para el autoplay de la imagen
+             */
+            function stopIntervalo() {
+                clearInterval(intervalo);
+                // Activamos los botones de control
+                $botonAvanzar.removeAttribute('disabled');
+                $botonRetroceder.removeAttribute('disabled');
+                $botonPlay.removeAttribute('disabled');
+                $botonStop.setAttribute('disabled', true);
+            }
+
+            // Eventos
+            $botonAvanzar.addEventListener('click', pasarFoto);
+            $botonRetroceder.addEventListener('click', retrocederFoto);
+            $botonPlay.addEventListener('click', playIntervalo);
+            $botonStop.addEventListener('click', stopIntervalo);
+            // Iniciar
+            renderizarImagen();
+        } 
+    </script>
+</head>
+<body>
+    <div class="carousel">
+        <button id="retroceder"><</button>
+        <div id="imagen"></div>
+        <button id="avanzar">></button>
+    </div>
+    <div class="controles">
+    </div>
+    
+      <div class="container">   
+        <div class="card-group mt-3">
+          <div class="card text-center border-info">
+            <div class="card-body">
+              <h4 class="card-title">Among Us</h4>
+              <img id="oveja" src="img/amongus.jpg" alt=""><br><br>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lectus sem, 
+                                    tempor vitae mattis malesuada, ornare sed erat. Pellentesque nulla dui, congue
+                                    nec tortor sit amet, maximus mattis dui. </p>
+              <a href="amongus.html" class="btn btn-primary">Entrar</a>
+            </div>
+          </div>          
+          
+          <div class="card text-center border-info">
+            <div class="card-body">
+              <h4 class="card-title">Cuphead</h4>
+              <img id="oveja" src="img/cupead.jpg" alt=""><br><br>
+
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lectus sem, 
+                                    tempor vitae mattis malesuada, ornare sed erat. Pellentesque nulla dui, congue
+                                    nec tortor sit amet, maximus mattis dui. </p>
+              <a href="cuphead.html" class="btn btn-primary">Entrar</a>
+            </div>
+          </div>          
+      
+          <div class="card text-center border-info">
+            <div class="card-body">
+              <h4 class="card-title">Free Fire</h4>
+              <img id="oveja" src="img/freefire.jpg" alt=""><br><br>
+
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lectus sem, 
+                                    tempor vitae mattis malesuada, ornare sed erat. Pellentesque nulla dui, congue
+                                    nec tortor sit amet, maximus mattis dui. </p>
+              <a href="freefire.html" class="btn btn-primary">Entrar</a>
+            </div>
+
+            
+          </div>          
+    
+        </div>
+      </div>  
+
+
+
+
+
+
+
+      <div class="container">   
+        <div class="card-group mt-3">
+          <div class="card text-center border-info">
+            <div class="card-body">
+              <h4 class="card-title">Gta San Andreas</h4>
+              <img id="oveja" src="img/gtasa.jpg" alt=""><br><br>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lectus sem, 
+                                    tempor vitae mattis malesuada, ornare sed erat. Pellentesque nulla dui, congue
+                                    nec tortor sit amet, maximus mattis dui. </p>
+              <a href="gtasa.html" class="btn btn-primary">Entrar</a>
+            </div>
+          </div>          
+    
+          <div class="card text-center border-info">
+            <div class="card-body">
+              <h4 class="card-title">League Of Leguends</h4>
+              <img id="oveja" src="img/lol.jpg" alt=""><br><br>
+
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lectus sem, 
+                                    tempor vitae mattis malesuada, ornare sed erat. Pellentesque nulla dui, congue
+                                    nec tortor sit amet, maximus mattis dui. </p>
+              <a href="lol.html" class="btn btn-primary">Entrar</a>
+            </div>
+          </div>          
+      
+          <div class="card text-center border-info">
+            <div class="card-body">
+              <h4 class="card-title">MineCraft</h4>
+              <img id="oveja" src="img/maincraft.jpg" alt=""><br><br>
+
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lectus sem, 
+                                    tempor vitae mattis malesuada, ornare sed erat. Pellentesque nulla dui, congue
+                                    nec tortor sit amet, maximus mattis dui. </p>
+              <a href="#" class="btn btn-primary">Entrar</a>
+            </div>
+
+            
+          </div>          
+    
+        </div>
+      </div>  
+
+
+
+      
+
+      <script>
+          var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+      </script>
+</body>
+</html>
