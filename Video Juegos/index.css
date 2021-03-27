@@ -1,41 +1,47 @@
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgb(167, 61, 61);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(167, 61, 61);
 }
 
 li {
-    float: left;
+  float: left;
 }
 
 li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 23px 16px;
-    text-decoration: none;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 23px 16px;
+  text-decoration: none;
 }
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: rgba(0, 39, 124, 0.616);
+  background-color: rgba(0, 39, 124, 0.616);
 }
 
-#pt{
-    width: 70px;
-    height: 70px;
-    display: block;
-    padding: 14px 15px;
+#pt {
+  width: 70px;
+  height: 70px;
+  display: block;
+  padding: 14px 15px;
 
 
 }
-#oveja{
-    width: 190px;  /* ANCHO */
-    height: 150px; /* largo  */
+
+#oveja {
+  width: 190px;
+  /* ANCHO */
+  height: 150px;
+  /* largo  */
 }
-* {box-sizing:border-box}
+
+* {
+  box-sizing: border-box
+}
 
 /* Slideshow container */
 .slideshow-container {
@@ -50,7 +56,8 @@ li a:hover {
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -72,8 +79,9 @@ li a:hover {
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Caption text */
@@ -108,7 +116,8 @@ li a:hover {
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -121,11 +130,21 @@ li a:hover {
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
